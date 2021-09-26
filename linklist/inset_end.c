@@ -8,6 +8,7 @@ struct node
 typedef struct node N;
 N *input(int n)
 {
+    
     N *head = NULL, *temp = NULL, *ptr = NULL;
     printf("Enter the value of nodes\n");
     for (int i = 0; i < n; i++)
