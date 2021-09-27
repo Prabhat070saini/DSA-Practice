@@ -48,25 +48,27 @@ N *deletion(N *head,int n)
     p=head;
     v=head;
     ptr=head;
-    if (n==1)
+    if (n==0)
     {
-      ptr=ptr->next;
-      return ptr;
+     head=head->next;
+     free(ptr);
+      return head;
     }
     else
     {
     
-    while (co!=n-2)
+    while (co!=n-1)
     {
        p=p->next;
        co++;
     }
-    while (c!=n-1)
+    while (c!=n)
     {
        v=v->next;
        c++;
     }
     p->next=v->next;
+    free(v);
 
     return head;
     }
@@ -80,7 +82,10 @@ scanf("%d",&n);
 head=input(n);
 print(head);
 printf("\n");
-head=deletion(head,5);
+int indx;
+printf("Enetr the index number which you want to delet\n");
+scanf("%d",&indx);
+head=deletion(head,indx);
 print(head);
  return 0;
 }
