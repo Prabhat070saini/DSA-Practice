@@ -55,13 +55,18 @@ N *deletion(N *head,int n)
        p=p->next;
       
     }
- 
-    for (int i = 0; i < co-1; i++)
+ if (co)
+ {
+   for (int i = 0; i < co-1; i++)
     {
         v=v->next;
     }
     v->next=p->next;
     free(p);
+     return head;
+ }
+ 
+   
     if (co==0)
     {
          head=head->next;
@@ -71,7 +76,7 @@ N *deletion(N *head,int n)
 
     }
     
-    return head;
+   
 }
 
 int main(){
