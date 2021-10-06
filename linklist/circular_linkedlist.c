@@ -34,14 +34,16 @@ N *input(int n)
              ptr->next = temp;
         }
     }
-   
+    temp->next=head;
     return head;
 }
 void print(N *head)
 {
     N *p;
     p=head;
-    while (p!=NULL)
+    printf("%d->",p->data);
+    p=p->next;
+    while (p!=head)
     {
         printf("%d->",(p->data));
         p=p->next;
