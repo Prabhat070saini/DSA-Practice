@@ -45,13 +45,15 @@ N *insertindex(N *head, N *insert, int index)
     N *p;
     int co = 0;
     p = head;
+   
     while (co != index - 1)
     {
         p = p->next;
         co++;
     }
+    
     insert->next = p->next;
-    p->next = insert;
+   p->next = insert;
     return head;
 }
 int main()
@@ -65,7 +67,7 @@ int main()
     print(head);
     printf("\n");
     insert=(N*)malloc(sizeof(N));
-    printf("Enter the value which you want to insert and Enter the index\naccept 0 and last\n");
+    printf("Enter the value which you want to insert and\nEnter the index\naccept 0 and last\n");
     scanf("%d %d", &(insert->data), &index);
     head = insertindex(head, insert, index);
     print(head);
