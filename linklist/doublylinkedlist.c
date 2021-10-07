@@ -13,12 +13,14 @@ N *createdoubly(int n)
     for (int i = 0; i < n; i++)
     {
         temp = (N *)malloc(sizeof(N));
-        scanf("%d", (temp->data));
+        scanf("%d", &(temp->data));
         temp->next = NULL;
+         
         if (head == NULL)
         {
+             temp->prvs = NULL;
             head = temp;
-            head->prvs = NULL;
+           
         }
         else
         {
@@ -37,6 +39,7 @@ void print(N *head)
 {
     N *p;
     p = head;
+    
     while (p != NULL)
     {
         printf("%d->", (p->data));
