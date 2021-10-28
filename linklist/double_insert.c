@@ -6,6 +6,7 @@ struct node
     struct node *next, *pvr;
 };
 typedef struct node N;
+/************************************create************************************************/
 N *doublcreate(int n)
 {
     N *head = NULL, *ptr, *temp;
@@ -33,6 +34,7 @@ N *doublcreate(int n)
     }
     return head;
 }
+/***************************************display*****************************************************/
 void print(N *head)
 {
     N *p;
@@ -44,10 +46,11 @@ void print(N *head)
         p = p->next;
     }
 }
+//*********************************insert***********************************************************//
 N *insertnode(N *head, N *insert, int n)
 {
-    int co = 0,c=0;
-    N *ptr = head,*v=head;
+    int co = 0, c = 0;
+    N *ptr = head, *v = head;
     if (n == 0)
     {
         insert->next = head;
@@ -61,23 +64,58 @@ N *insertnode(N *head, N *insert, int n)
             ptr = ptr->next;
             co++;
         }
-         while (c != n-1)
+        while (c != n-1)
         {
             v = v->next;
             c++;
         }
-        insert->next=ptr->next;
-        v->pvr=insert;
-        ptr->next=insert;
-        insert->pvr=ptr;
-         return head;
-
+        insert->next = ptr->next;
+        v->pvr = insert;
+        ptr->next = insert;
+        insert->pvr = ptr;
+        return head;
     }
-   if (head==NULL)
-   {
-       return insert;
-   }
-   
+    if (head == NULL)
+    {
+        return insert;
+    }
+}
+/********************************deletion*******************************************************/
+N *delete (N *head, int index)
+{
+    N *current = head, *pv = head, *ptr = head;
+    int cu = 0, ci = 0, c = 0;
+    if (index == 1)
+    {
+        head = head->next;
+        head->pvr = NULL;
+        free(current);
+        free(pv);
+        return head;
+    }
+    else
+    {
+         while (ci != index - 1)
+        {
+            pv = pv->next;
+            ci++;
+        }
+        while (cu != index)
+        {
+            current = current->next;
+            cu++;
+        }
+       
+        while (c != index+1)
+        {
+            ptr = ptr->next;
+            c++;
+        }
+        pv->next = current->next;
+        free(current);
+        ptr->pvr = pv;
+        return head;
+    }
 }
 int main()
 {
@@ -95,7 +133,16 @@ int main()
     scanf("%d %d", &index, &(insert->data));
     insert->next = NULL;
     insert->pvr = NULL;
+    printf("linkedlist after the insert the\n");
     head = insertnode(head, insert, index);
     print(head);
+    printf("\nlinkedlist after the deletion the node at index -1\n");
+
+    head = delete (head, 2);
+    print(head);
+    printf("\nlinkedlist after the deletion the  first node  \n");
+    head = delete (head, 1);
+    print(head);
+
     return 0;
 }
