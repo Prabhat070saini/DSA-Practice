@@ -12,11 +12,11 @@ int partition(int l, int h, int *A)
     int i = l, j = h;
     while (i < j)
     {
-        while (pivot <= A[i])
+        while (pivot >= A[i])
         {
             i++;
         }
-        while (pivot > A[j])
+        while (pivot < A[j])
         {
             j--;
         }
@@ -40,20 +40,22 @@ void Quicksort(int *A, int l, int h)
 }
 int main()
 {
-    int A[6] = {
-        1,
-        2,
-        10,
-        3,
-        0,
-    };
+    int size;
+    printf("Enter the size of array\n");
+    scanf("%d", &size);
+    int A[size];
+    printf("Enter the  element\n");
+    for (int i = 0; i < size; i++)
+    {
+        scanf("%d", &A[i]);
+    }
+
     int length = sizeof(A) / sizeof(A[0]);
-    Quicksort(A, 0, length);
-    for (int i = 0; i < 6; i++)
+    Quicksort(A, 0, size - 1);
+    for (int i = 0; i < size; i++)
     {
         printf("%d ", A[i]);
     }
-    // printf("%d",lenght);
 
     return 0;
 }
