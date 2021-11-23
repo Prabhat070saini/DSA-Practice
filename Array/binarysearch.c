@@ -56,12 +56,12 @@ int main()
      while (left<=right)
      {
            int middle = (left + right)/2;
-         if (middle==searching)
+         if (arr[middle]==searching)
          {
             flag++;
                break;
          }
-         else if (searching<middle)
+         else if (searching<arr[middle])
          {
             right=middle-1;
          }
