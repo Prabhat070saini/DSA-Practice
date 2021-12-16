@@ -6,36 +6,31 @@ struct binarytree
     struct binarytree *left, *right;
 };
 typedef struct binarytree B;
-// B *Createroot(int data)
-// {
-//     B *root = NULL;
-//     root =(B*)malloc(sizeof(B));
-//     root->data = data;
-//     root->left = NULL;
-//     root->right = NULL;
-//     return root;
-// }
+
 B *createtree()
 {
     B *temp;
     int data;
-    printf("Enter the node data\n");
+    printf("Enter node data(-1 for no data)\n");
     scanf("%d", &data);
+
     if (data == -1)
         return NULL;
     temp = (B *)malloc(sizeof(B));
     temp->data = data;
+    printf("Enter left child for %d\n", data);
     temp->left = createtree();
+    printf("Enter Right child for %d\n", data);
     temp->right = createtree();
     return temp;
 }
-void preorder(B *root)
+void print(B *root)
 {
     if (root != NULL)
     {
-        printf("%d", (root->data));
-        preorder(root->left);
-        preorder(root->right);
+        printf("%d->", (root->data));
+        print(root->left);
+        print(root->right);
     }
 }
 
@@ -44,7 +39,8 @@ int main()
 
     B *root = NULL;
     root = createtree();
-    preorder(root);
+    printf("Element of binary trees are :");
+    print(root);
 
     return 0;
 }
