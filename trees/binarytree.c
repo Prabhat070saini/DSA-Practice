@@ -6,7 +6,31 @@ struct binarytree
     struct binarytree *left, *right;
 };
 typedef struct binarytree B;
+int height(B *root)
+{
+    if (root == NULL)
+    {
+        return - 1;
+    }
+    else if (root->left == NULL && root->right == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        int lft = height(root->left);
+        int rit = height(root->right);
+        if (lft > rit)
+        {
+            return lft + 1;
+        }
+        else
 
+        {
+            return rit + 1;
+        }
+    }
+}
 B *createtree()
 {
     B *temp;
@@ -41,6 +65,9 @@ int main()
     root = createtree();
     printf("Element of binary trees are :");
     print(root);
+    int heightB=height(root);
+    printf("\n Height of binary tree : %d",heightB);
+
 
     return 0;
 }
