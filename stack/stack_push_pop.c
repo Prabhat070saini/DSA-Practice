@@ -22,7 +22,8 @@ void pop(int *stack)
     }
     else
     {
-        // data = stack[top];
+        data = stack[top];
+        printf("POP DATA %d",data);
         top--;
         return;
     }

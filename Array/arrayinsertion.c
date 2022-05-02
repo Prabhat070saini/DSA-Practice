@@ -15,12 +15,12 @@ int insert(int *A, int size, int index, int max, int element)
 
     for (int i = size; i >= index; i--)
     {
-        printf("%d",A[i+1]);
-        break;
+      //  printf("%d",A[i+1]);
+        // break;
         A[i + 1] = A[i];
     }
     // printf("%d\n", A[6]);
-    // A[index] = element;
+     A[index] = element;
     return 1;
 }
 // void arrangeinsert(int *A, int size, int max, int element)
