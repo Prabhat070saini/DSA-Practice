@@ -37,7 +37,7 @@ int binarysearch(int *rank, int maxtime, int number_of_shef, int roti)
     int ans = 0;
     while (start <= end)
     {
-        cout<<"\nmid"<<mid<<endl;
+        // cout<<"\nmid"<<mid<<endl;
         bool check = ispossible(rank, mid, number_of_shef, roti);
         if (check)
         {
@@ -47,7 +47,7 @@ int binarysearch(int *rank, int maxtime, int number_of_shef, int roti)
         else if(check==false)
         {
             start = mid + 1;
-            cout<<"\nfalse\n";
+            // cout<<"\nfalse\n";
         }
         mid = start + (end - start) / 2;
     }
@@ -66,7 +66,7 @@ int main()
     }
     
     int maxtime = rank[0] * (roti * (roti + 1)) / 2;
-    cout<<maxtime<<"max\n";
+    // cout<<maxtime<<"max\n";
     int x = binarysearch(rank, maxtime, number_of_shef, roti);
     cout << x;
     return 0;
