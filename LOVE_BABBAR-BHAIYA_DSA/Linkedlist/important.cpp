@@ -1,6 +1,9 @@
 // https://practice.geeksforgeeks.org/problems/detect-loop-in-linked-list/1
 /* https://practice.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1
-
+      |
+      |
+     \/
+     solution
 
 #include <iostream>
 #include <cstdlib>
@@ -179,3 +182,7 @@ int main()
     return 0;
 }
 */
+
+
+// new question******************************************************
+// https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/submissions/

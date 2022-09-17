@@ -1,2 +1,2 @@
-
-            // cout << temp2->data << "2data\n";
+ head->next = temp1;
+            head=head->next;
