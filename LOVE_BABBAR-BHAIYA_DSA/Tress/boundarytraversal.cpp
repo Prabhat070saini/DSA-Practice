@@ -126,7 +126,7 @@ void righttraversal(Node*&root,vector<int> &ve,Node*&rightleft)
 
     }
     ve.push_back(root->data);
-    lefttraversal(root->right,ve,rightleft);
+    righttraversal(root->right,ve,rightleft);
        reverse(ve.begin(), ve.end());
 
 
